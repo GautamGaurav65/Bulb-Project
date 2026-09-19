@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bulb ON OFF</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f30fac2c61.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="heading">
+                <span class="icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </span>
+
+                <h1>Bulb <span>ON</span> / OFF</h1>
+
+                <p>Turn the light on and off</p>
+            </div>
+
+
+            <!-- Bulb -->
+
+            <div class="bulb-area">
+
+                <div class="glow"></div>
+
+                <img id="img" src="" alt="Bulb">
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="status">
+                <span class="status-dot"></span>
+                <span id="span">Bulb is OFF</span>
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="btn">
+
+                <button id="of" onclick="btnOf()">
+                    <i class="fa-solid fa-power-off"></i>
+                    OFF
+                </button>
+
+                <button id="on" onclick="myFun()">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    ON
+                </button>
+
+            </div>
+
+        </div>
+
+        <p class="footer">
+            <i class="fa-regular fa-lightbulb"></i>
+            Simple JavaScript Project
+        </p>
+
+    </div>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

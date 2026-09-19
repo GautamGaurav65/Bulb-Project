@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Poppins", sans-serif;
+
+    background:
+        radial-gradient(circle at 15% 20%, #263b72 0%, transparent 30%),
+        radial-gradient(circle at 85% 80%, #4d2475 0%, transparent 30%),
+        linear-gradient(135deg, #10172f, #1d2547);
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* Background circles */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    top: -100px;
+    left: -100px;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    bottom: -150px;
+    right: -120px;
+}
+
+
+/* Main container */
+
+.container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Card */
+
+.card {
+
+    width: 450px;
+
+    padding: 40px 35px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* Heading */
+
+.heading .icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 193, 7, 0.12);
+
+    color: #ffc107;
+
+    font-size: 24px;
+}
+
+
+.heading h1 {
+
+    font-size: 35px;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+
+.heading h1 span {
+    color: #ffc107;
+}
+
+
+.heading p {
+
+    color: #bfc7e5;
+
+    font-size: 14px;
+}
+
+
+/* Bulb Area */
+
+.bulb-area {
+
+    height: 280px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* Glow */
+
+.glow {
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: #ffc107;
+
+    filter: blur(70px);
+
+    opacity: 0;
+
+    transition: 0.5s;
+}
+
+
+/* Bulb image */
+
+#img {
+
+    width: 190px;
+
+    height: 230px;
+
+    object-fit: contain;
+
+    position: relative;
+
+    z-index: 2;
+
+    transition: 0.4s;
+
+}
+
+
+/* ON class - JS se use kar sakte hain */
+
+.bulb-area.active .glow {
+
+    opacity: 0.55;
+
+}
+
+
+.bulb-area.active #img {
+
+    filter:
+        drop-shadow(0 0 15px #ffc107)
+        drop-shadow(0 0 35px #ffc107);
+
+    transform: scale(1.04);
+
+}
+
+
+/* Status */
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 8px 18px;
+
+    margin-bottom: 25px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #cbd2ec;
+
+    font-size: 14px;
+}
+
+
+.status-dot {
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #777;
+
+}
+
+
+/* Buttons */
+
+.btn {
+
+    display: flex;
+
+    gap: 15px;
+
+    justify-content: center;
+}
+
+
+.btn button {
+
+    width: 160px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.btn button i {
+    margin-right: 7px;
+}
+
+
+/* OFF */
+
+#of {
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+#of:hover {
+
+    background: #e53935;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(229, 57, 53, 0.3);
+}
+
+
+/* ON */
+
+#on {
+
+    background: linear-gradient(
+        135deg,
+        #ffb300,
+        #ffca28
+    );
+
+    color: #302000;
+
+    box-shadow:
+        0 8px 20px rgba(255, 193, 7, 0.2);
+}
+
+
+#on:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(255, 193, 7, 0.4);
+}
+
+
+.btn button:active {
+
+    transform: scale(0.95);
+
+}
+
+
+/* Footer */
+
+.footer {
+
+    margin-top: 20px;
+
+    color: #8992b5;
+
+    font-size: 12px;
+}
+
+
+.footer i {
+
+    color: #ffc107;
+
+    margin-right: 5px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 550px) {
+
+    .card {
+
+        width: 100%;
+
+        max-width: 400px;
+
+        padding: 30px 20px;
+
+    }
+
+
+    .heading h1 {
+
+        font-size: 29px;
+
+    }
+
+
+    .bulb-area {
+
+        height: 240px;
+
+    }
+
+
+    #img {
+
+        width: 160px;
+
+        height: 200px;
+
+    }
+
+
+    .btn button {
+
+        width: 140px;
+
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .btn {
+
+        flex-direction: column;
+
+    }
+
+    .btn button {
+
+        width: 100%;
+
+    }
+
+}
